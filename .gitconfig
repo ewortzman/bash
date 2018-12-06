@@ -1,0 +1,49 @@
+[core]
+	preloadindex = true
+	fscache = true
+	trustctime = false
+	editor = vim
+	fileMode = false
+	autocrlf = input
+[gc]
+	auto = 256
+[push]
+	default = current
+[color]
+	ui = true
+[credential]
+	helper = cache --timeout=3600
+[merge]
+	tool = p4merge
+[mergetool]
+	keeptemporaries = false
+	keepbackups = false
+	prompt = false
+	trustexitcode = false
+[alias]
+	cp = cherry-pick
+	co = checkout
+	cl = clone
+	ci = commit
+	st = status -sb
+	br = branch
+	unstage = reset HEAD --
+	dc = diff --cached
+	pretty-log = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
+	last = checkout @{-1}
+	diff-commit = "!f() { git diff \"$1^\" \"$1\"; }; f"
+	addnw = "!f() { git diff --ignore-space-change --ignore-blank-lines \"$1\" | git apply --cached --ignore-whitespace; }; f"
+[user]
+[diff]
+	guitool = kdiff3
+[mergetool "meld"]
+	path = C:/Program Files (x86)/Meld/meld.exe
+	cmd = \"C:/Program Files (x86)/Meld/meld.exe\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output \"$MERGED\"
+[mergetool "p4merge"]
+	cmd = p4merge $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = false
+[user]
+	name = Ethan Wortzman
+	email = ewortzman@athenahealth.com
+[http]
+	sslVerify = false
