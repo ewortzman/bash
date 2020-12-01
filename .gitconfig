@@ -13,8 +13,6 @@
 	ui = true
 [credential]
 	helper = cache --timeout=3600
-[merge]
-	tool = p4merge
 [mergetool]
 	keeptemporaries = false
 	keepbackups = false
@@ -36,14 +34,8 @@
 [user]
 [diff]
 	guitool = kdiff3
-[mergetool "meld"]
-	path = C:/Program Files (x86)/Meld/meld.exe
-	cmd = \"C:/Program Files (x86)/Meld/meld.exe\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output \"$MERGED\"
-[mergetool "p4merge"]
-	cmd = p4merge $BASE $LOCAL $REMOTE $MERGED
-	trustExitCode = false
 [user]
 	name = Ethan Wortzman
-	email = ewortzman@athenahealth.com
+	email = ethan.wortzman@gmail.com
 [http]
 	sslVerify = false
